@@ -19,23 +19,23 @@ export async function generateMetadata(): Promise<Metadata> {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'ObjectX 博客-一个专注前端 & Ai的网站',
-    url: 'https://object-x.net.cn',
-    logo: site?.logo || 'https://object-x.net.cn/logo.png',
+    name: site?.title || '个人博客',
+    url: 'https://www.1713yjk.uk',
+    logo: site?.favicon || 'https://www.1713yjk.uk/avatar.png',
     sameAs: [
-      site?.social?.github || 'https://github.com/objectx',
+      site?.social?.github || '',
       // 其他社交媒体链接
     ]
   };
   return {
-    title: site?.title || "ObjectX's blog",
+    title: site?.title || "个人博客",
     description:
-      site?.seo?.description || "ObjectX's articles about programming and life",
+      site?.seo?.description || "分享技术与生活",
     keywords: site?.seo?.keywords || [],
     openGraph: {
-      title: 'ObjectX 博客’ 一个专注前端 & Ai的网站,',
-      siteName: "ObjectX 博客",
-      description: site?.seo?.description || "ObjectX's articles about programming and life",
+      title: site?.title || '个人博客',
+      siteName: site?.title || "个人博客",
+      description: site?.seo?.description || "分享技术与生活",
       type: "website",
     },
     other: {
@@ -51,19 +51,19 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const jsonLdData = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "如何优化 Next.js 网站的 SEO",
+  "@type": "WebSite",
+  "name": "个人博客",
+  "url": "https://www.1713yjk.uk",
   "author": {
     "@type": "Person",
-    "name": "ObjectX"
+    "name": "博主"
   },
-  "datePublished": "2025-03-18",
   "publisher": {
     "@type": "Organization",
-    "name": "ObjectX 博客",
+    "name": "个人博客",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://example.com/logo.png"
+      "url": "https://www.1713yjk.uk/avatar.png"
     }
   }
 };

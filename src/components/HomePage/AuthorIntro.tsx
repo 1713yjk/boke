@@ -9,10 +9,10 @@ export default function AuthorIntro() {
     <p className="text-gray-600 mt-4">
       你好 👋，我是{" "}
       <span className="bg-[#e8f5e9] px-2 py-0.5 rounded">
-        {site?.author?.name || 'ObjectX'}
+        {site?.author?.name || '博主'}
       </span>
       ，
-      {site?.author?.description || '一个热爱生活和分享技术的前端工程师'}
+      {site?.author?.description || '一个热爱生活和分享技术的程序员'}
     </p>
   )
 }

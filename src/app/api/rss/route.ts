@@ -66,8 +66,8 @@ async function getBookmarksRSS(baseUrl: string, categoryId: string | null): Prom
 
     // 创建 RSS feed
     const feed = new RSS({
-      title: `ObjectX - ${categoryName}`,
-      description: `ObjectX 书签导航 - ${categoryName}`,
+      title: `书签导航 - ${categoryName}`,
+      description: `个人书签导航 - ${categoryName}`,
       feed_url: `${baseUrl}/api/rss?type=bookmarks${categoryId ? `&categoryId=${categoryId}` : ""}`,
       site_url: `${baseUrl}/bookmarks`,
       image_url: avatarUrl,
@@ -123,7 +123,7 @@ async function getArticlesRSS(baseUrl: string, categoryId: string | null): Promi
     // 获取站点信息
     const site = await db.collection("sites").findOne({});
     const avatarUrl = site?.author?.avatar ? `${baseUrl}${site.author.avatar}` : `${baseUrl}/avatar.png`;
-    const authorName = site?.author?.name || "ObjectX";
+    const authorName = site?.author?.name || "博主";
 
     // 构建查询条件
     let query: any = { status: "published" };
@@ -150,8 +150,8 @@ async function getArticlesRSS(baseUrl: string, categoryId: string | null): Promi
 
     // 创建 RSS feed
     const feed = new RSS({
-      title: `ObjectX - ${categoryName}`,
-      description: `ObjectX 博客 - ${categoryName}`,
+      title: `个人博客 - ${categoryName}`,
+      description: `技术博客 - ${categoryName}`,
       feed_url: `${baseUrl}/api/rss?type=articles${categoryId ? `&categoryId=${categoryId}` : ""}`,
       site_url: `${baseUrl}/articles`,
       image_url: avatarUrl,
@@ -161,11 +161,11 @@ async function getArticlesRSS(baseUrl: string, categoryId: string | null): Promi
         'content': 'http://purl.org/rss/1.0/modules/content/',
         'dc': 'http://purl.org/dc/elements/1.1/',
         'media': 'http://search.yahoo.com/mrss/',
-        'article': 'http://objectx.io/article/1.0/'
+        'article': 'http://www.1713yjk.uk/article/1.0/'
       },
       custom_elements: [
         {
-          'generator': 'ObjectX RSS Generator'
+          'generator': 'Personal Blog RSS Generator'
         },
         {
           'content:format': 'markdown'

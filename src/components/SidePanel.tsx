@@ -164,9 +164,9 @@ const SidebarContent = ({ onNavClick }: { onNavClick?: () => void }) => {
         <Avatar>
           <AvatarImage
             src={site?.author?.avatar || "./avatar.png"}
-            alt="vespser"
+            alt="avatar"
           />
-          <AvatarFallback>ObjectX</AvatarFallback>
+          <AvatarFallback>{site?.author?.name?.charAt(0) || "我"}</AvatarFallback>
         </Avatar>
         <div>
           <h1 className="font-semibold tracking-tight">
