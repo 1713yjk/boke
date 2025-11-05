@@ -170,7 +170,7 @@ const SidebarContent = ({ onNavClick }: { onNavClick?: () => void }) => {
         </Avatar>
         <div>
           <h1 className="font-semibold tracking-tight">
-            {site?.author?.name ?? "ObjectX-不知名程序员"}
+            {site?.author?.name ?? "先行者117"}
           </h1>
           <p className="text-gray-600">
             {site?.author?.bio ?? "👨🏻‍💻 前端工程师"}
