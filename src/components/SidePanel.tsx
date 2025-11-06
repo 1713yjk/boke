@@ -169,12 +169,21 @@ const SidebarContent = ({ onNavClick }: { onNavClick?: () => void }) => {
           <AvatarFallback>{site?.author?.name?.charAt(0) || "我"}</AvatarFallback>
         </Avatar>
         <div>
-          <h1 className="font-semibold tracking-tight">
-            {site?.author?.name ?? "先行者117"}
-          </h1>
-          <p className="text-gray-600">
-            {site?.author?.bio ?? "👨🏻‍💻 前端工程师"}
-          </p>
+          {site?.author?.name ? (
+            <>
+              <h1 className="font-semibold tracking-tight">
+                {site.author.name}
+              </h1>
+              <p className="text-gray-600">
+                {site.author.bio || "分享生活与技术"}
+              </p>
+            </>
+          ) : (
+            <>
+              <div className="h-5 w-24 bg-gray-200 rounded animate-pulse" />
+              <div className="h-4 w-32 bg-gray-200 rounded animate-pulse mt-1" />
+            </>
+          )}
         </div>
       </div>
       <nav className="flex flex-col gap-1">
