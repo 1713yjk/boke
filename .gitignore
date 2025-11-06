@@ -39,3 +39,9 @@ next-env.d.ts
 
 # local uploads (if using OSS, these are not needed in git)
 /public/uploads
+
+# temporary files
+*.md
+!README.md
+!docs/**/*.md
+cursor_*.md

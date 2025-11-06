@@ -32,6 +32,11 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       site?.seo?.description || "分享技术与生活",
     keywords: site?.seo?.keywords || [],
+    icons: {
+      icon: site?.favicon || '/favicon.ico',
+      shortcut: site?.favicon || '/favicon.ico',
+      apple: site?.favicon || '/favicon.ico',
+    },
     openGraph: {
       title: site?.title || '个人博客',
       siteName: site?.title || "个人博客",
